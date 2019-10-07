@@ -1,0 +1,15 @@
+apiVersion: kita.danistrebel.io/v1alpha1
+kind: KitaSpace
+metadata:
+  name: USER_ID
+spec:
+  owner:
+    name: Daniel
+    email: daniel.strebel@ipt.ch
+  repos:
+    - https://github.com/ramitsurana/awesome-kubernetes.git
+    - https://github.com/operator-framework/awesome-operators
+    - https://github.com/danistrebel/kita-oc-cli
+    - https://github.com/danistrebel/viscon-strimzi
+  platform: openshift
+  token: ACCESS_TOKEN

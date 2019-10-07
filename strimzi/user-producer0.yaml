@@ -1,0 +1,30 @@
+apiVersion: kafka.strimzi.io/v1beta1
+kind: KafkaUser
+metadata:
+  name: producer-0
+  labels:
+    strimzi.io/cluster: viscon-cluster
+spec:
+  authentication:
+    type: tls
+  authorization:
+    type: simple
+    acls:
+      - resource:
+          type: topic
+          name: viscon-auth
+          patternType: literal
+        operation: Write
+        host: "*"
+      - resource:
+          type: topic
+          name: viscon-auth
+          patternType: literal
+        operation: Create
+        host: "*"
+      - resource:
+          type: topic
+          name: viscon-auth
+          patternType: literal
+        operation: Describe
+        host: "*"

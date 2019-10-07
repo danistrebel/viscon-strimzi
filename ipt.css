@@ -1,0 +1,50 @@
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  text-transform: none;
+}
+
+.reveal ul {
+  list-style-type: none;
+ }
+
+ .reveal ul li {
+   margin: 20px 0;
+ }
+
+ #header-left {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+}
+#header-right {
+  position: absolute;
+  top: 0%;
+  right: 0%;
+}
+#footer-left {
+  position: absolute;
+  bottom: 0%;
+  left: 0%;
+}
+
+.ipt-footer {
+  position: fixed;
+  bottom: 40px;
+  right: 20px;
+  height: 60px;
+}
+
+.reveal.center .slides section {
+  height: 100% !important;
+  top: 0px !important;
+}
+
+.reveal code {
+  background: #282a36;
+  color: white;
+  font-size: 0.8em;
+}
