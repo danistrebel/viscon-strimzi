@@ -33,7 +33,7 @@ TODO here
 <!-- https://emojipedia.org -->
 * 🇨🇭 Born in Zurich
 * 🤓 Computer Science Masters UZH
-* 🧳 Data Analytics, Corporate R&D, Inovation Labs
+* 🧳 Data Analytics, Corporate R&D, Innovation Labs
 * 🚀 Cloud, Data, AI
 * 💙 Running, Hiking, Travel
 
@@ -47,14 +47,26 @@ TODO here
 * 🇸🇬 Born in Singapore
 * 🤓 Robotics Masters ETH
 * 🧳 {Disney, IBM} Research
-* 🚀 Computer Vision, AI, CICD
-* 💙 What ever rocks your boat ... 
+* 🚀 Computer Vision, ML, DevOps
+* 💙 Music, Cooking, Gym
 
 <div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
 
 ---
 
-## Quick Intro To Kubernetes
+## Kubernetes in a Oneliner
+
+Going from *it works on my com* to 
+
+*it works predictably across a cluster of machines*
+
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+
+---
+
+## From Bare Metal to Container Orchestration
+
+<img class="plain"  src="./presentation-sources/container-orchestration.png" height="400px" />
 
 <div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
 
@@ -174,7 +186,7 @@ And assigned them to the `strimzi-cluster-operator` service account as well as y
 
 ## Strimzi Components
 
-TODO Add overview Diagram
+<img class="plain"  src="./presentation-sources/kafka-components.png" />
 
 <div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
 
@@ -292,7 +304,7 @@ Kill the session with CTRL + C when done
 
 ---
 
-## 🙌 Frist Kafka Consumer
+## 🙌 First Kafka Consumer
 
 Start a console consumer pod
 
