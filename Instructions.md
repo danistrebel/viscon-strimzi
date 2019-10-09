@@ -21,11 +21,52 @@ enableTitleFooter: false
 
 ## whois ipt.ch
 
-TODO here
+```sh
+This information is subject to an Acceptable Use Policy.
+See https://www.nic.ch/terms/aup/
+
+
+Domain name:
+ipt.ch
+
+Holder of domain name:
+Innovation Process Technology Inc.
+Thomas Schaller
+Poststrasse 14
+CH-6300 Zug
+Switzerland
+
+Technical contact:
+Comfox AG
+Martin Fuchs
+Bösch 82
+CH-6331 Hünenberg
+Switzerland
+
+Registrar:
+METANET AG
+
+First registration date:
+1997-02-25
+
+DNSSEC:N
+
+Name servers:
+ch.ch-inter.net
+de.ch-inter.net
+nl.ch-inter.net
+```
 
 <div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
 
 ---
+
+## Innovation Process Technology AG
+
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+
+---
+
 
 ## whoami #Daniel
 
@@ -54,11 +95,9 @@ TODO here
 
 ---
 
-## Kubernetes in a Oneliner
+## Kubernetes in a Nutshell
 
-Going from *it works on my com* to 
-
-*it works predictably across a cluster of machines*
+<div><img class="plain" style="max-height:600px;" src="http://turnoff.us/image/en/before-devops-after-devops.png"/></div>
 
 <div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
 
@@ -67,6 +106,17 @@ Going from *it works on my com* to
 ## From Bare Metal to Container Orchestration
 
 <img class="plain"  src="./presentation-sources/container-orchestration.png" height="400px" />
+
+---
+
+## k8s Slang
+
+* Pod
+* Container
+* Deployment
+* Service
+* Route
+* Serviceaccount
 
 <div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
 
@@ -568,6 +618,18 @@ oc get secrets -l strimzi.io/kind=KafkaUser -o yaml
 ## Need to demonstrate the Auth Demo
 
 https://github.com/strimzi/client-examples/blob/master/deployment-ssl-auth.yaml
+
+---
+
+### Kafka Eco System
+
+* Kafka Connect
+* Mirror Maker
+* HTTP Bridge    
+* Managed Kafka
+  * AWS MSK
+  * Azure Eventhubs
+  * Confluent on GCP... 
 
 ---
 
