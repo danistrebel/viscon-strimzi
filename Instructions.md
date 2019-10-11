@@ -282,6 +282,17 @@ And assigned them to the `strimzi-cluster-operator` service account as well as y
 
 ---
 
+## 🙌 Setting up the cluster
+
+Change into the tutorial project
+
+```bash
+cd /home/coder/projects/viscon-strimzi
+```
+
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+
+---
 
 ## 🙌 Strimzi Custom Resource
 
@@ -513,7 +524,7 @@ pod "kafka-topic-list" deleted
 
 ---
 
-## The was cute?!
+## That was cute?!
 
 So what is missing?
 
@@ -898,6 +909,13 @@ and wait for the data to show up in the dashboard
 
 <div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
 
+---
+
+## Fireside Chat / Q&A
+
+<img class="plain" src="https://media.giphy.com/media/DPiuat0EsqP3a/giphy.gif" style="max-heigh:600px">
+
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
 
 ---
 
