@@ -189,6 +189,15 @@ oc get all
 
 ---
 
+## Standing on the shoulders of giants
+
+<img class="plain"  src="./presentation-sources/kafka-developments.png" style="max-height:500px;"/>
+
+<div class="tiny">© ipt AG</div>
+
+
+---
+
 ## Apache Kafka
 
 <img class="plain"  src="./presentation-sources/kafka-draw-0.png" style="max-height:500px;"/>
@@ -225,7 +234,7 @@ oc get all
 </div>
 
 * [Open Source](https://github.com/strimzi) Project (started by Red Hat)
-* Recencly adopted as a [CNCF](https://www.cncf.io/) Project
+* Recently adopted as a [CNCF](https://www.cncf.io/) Project
 * Using Operators to deploy and manage Apache Kafka on Kubernetes / Openshift
 * Used by ipt in production since GA in 2018
 
@@ -980,6 +989,13 @@ Copy `strimzi/metrics-demo/kafka-dashboard.json`
 
 
 <div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" height="60px"/></div>
+
+---
+
+## Real-world use cases
+
+* Kafka as "catchment-lake" for stream analytics in finance
+* Ingestion layer for "data lake"
 
 ---
 
