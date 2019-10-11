@@ -19,7 +19,15 @@ enableTitleFooter: false
 
 ---
 
-## whois ipt.ch
+## Welcome
+
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+
+<div><img class="plain"  src="./presentation-sources/ipt-team.jpg" style="max-height:400px;"/></div>
+
+---
+
+## whois [ipt.ch](https://ipt.ch)
 
 ```sh
 This information is subject to an Acceptable Use Policy.
@@ -61,12 +69,13 @@ nl.ch-inter.net
 
 ---
 
-## Innovation Process Technology AG
+## ipt AG @ ERFA
 
 <div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
 
----
+<div><img class="plain"  src="./presentation-sources/ipt-erfa.jpg" style="max-height:400px;"/></div>
 
+---
 
 ## whoami #Daniel
 
@@ -74,8 +83,8 @@ nl.ch-inter.net
 <!-- https://emojipedia.org -->
 * 🇨🇭 Born in Zurich
 * 🤓 Computer Science Masters UZH
-* 🧳 Data Analytics, Corporate R&D, Innovation Labs
-* 🚀 Cloud, Data, AI
+* 🧳 Analytics, Corporate R&D, Innovation Labs
+* 🚀 Cloud Architecture, Data, ML
 * 💙 Running, Hiking, Travel
 
 <div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
@@ -124,9 +133,16 @@ nl.ch-inter.net
 
 ## Intro to the Lab Environment
 
-TODO Introduce Kita
+The high level picture
+
+<img class="plain"  src="./presentation-sources/kita.png" height="400px" />
 
 <div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+
+---
+
+## Rule 1/1: Stick to the Instructions
+<img class="plain"  src="https://memeshappen.com/media/created/this-is-why-we-can39t-have-Nice-things-meme-22203.jpg" height="400px" />
 
 ---
 
@@ -168,11 +184,31 @@ oc get all
 
 ---
 
-## What is Apache Kafka
+## Apache Kafka
 
-<!-- <img class="plain"  src="./presentation-sources/apache-kafka.png" /> -->
+<img class="plain"  src="./presentation-sources/kafka-draw-0.png" style="max-height:500px;"/>
 
-JGA TODO: Insert some diagrams from RHA
+<div class="tiny">© ipt AG</div>
+
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+
+---
+
+## Kafka High-Level
+
+<img class="plain"  src="./presentation-sources/kafka-draw-1.png" style="max-height:500px;"/>
+
+<div class="tiny">© ipt AG</div>
+
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+
+---
+
+## Kafka Secret Sauce
+
+<img class="plain"  src="./presentation-sources/kafka-draw-2.png" style="max-height:500px;"/>
+
+<div class="tiny">© ipt AG</div>
 
 <div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
 
@@ -184,7 +220,7 @@ JGA TODO: Insert some diagrams from RHA
 </div>
 
 * [Open Source](https://github.com/strimzi) Project (started by Red Hat)
-* Recencly adpoted as a [CNCF](https://www.cncf.io/) Project
+* Recencly adopted as a [CNCF](https://www.cncf.io/) Project
 * Using Operators to deploy and manage Apache Kafka on Kubernetes / Openshift
 * Used by ipt in production since GA in 2018
 
@@ -206,7 +242,8 @@ JGA TODO: Insert some diagrams from RHA
 What has been done for you  
 (because it requires cluster admin rights)
 
-###### Created Custom Resource Definitions 
+##### Custom Resource Definitions
+
 ```bash
 oc get CustomResourceDefinitions | grep kafka
 
@@ -226,7 +263,7 @@ What has been done for you
 (because it requires cluster admin rights)
 
 
-###### Created Roles and ClusterRoles
+##### Roles and ClusterRoles
 
 ```bash
 oc get ClusterRoles | grep strimzi
@@ -274,7 +311,7 @@ spec:
 
 ```
 
-see `./strimzi/kafka0.yaml` for the full file
+see `./strimzi/kafka/kafka-plain.yaml`
 
 <div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
 
@@ -314,7 +351,7 @@ oc apply -f strimzi/kafka/kafka-plain.yaml
 ```
 
 Watch the operator create a full Kafka cluster  
-(in about 30s 🎉)
+(in about 40s 🎉)
 
 ```bash
 oc get pods
@@ -410,7 +447,7 @@ pod "kafka-topic-list" deleted
 And the generated KafkaTopic Resources
 
 ```bash
-oc get KafkaTopics   
+oc get KafkaTopics
 
 NAME                                                          PARTITIONS   REPLICATION FACTOR
 consumer-offsets---84e7a678d08f4bd226872e5cdd4eb527fadc1c6a   50           2
