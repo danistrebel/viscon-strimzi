@@ -198,12 +198,12 @@ What has been done for you
 
 ###### Created Custom Resource Definitions 
 ```bash
-oc get customresourcedefinitions
-NAME
+oc get CustomResourceDefinitions | grep kafka
+
+
 kafkas.kafka.strimzi.io
 kafkatopics.kafka.strimzi.io
 kafkausers.kafka.strimzi.io
-# and some more
 ```
 
 <div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
