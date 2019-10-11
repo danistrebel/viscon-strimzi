@@ -895,6 +895,73 @@ and wait for the data to show up in the dashboard
 
 ---
 
+## 🙌 Cluster Monitoring
+
+Create a scrape config
+
+```bash
+oc create secret generic additional-scrape-configs --from-file=strimzi/metrics-demo/prometheus-additional.yaml
+```
+
+and the Prometheus deployment
+
+```bash
+oc apply -f strimzi/metrics-demo/prometheus.yaml
+
+oc apply -f strimzi/metrics-demo/prometheus-service-monitor.yaml
+```
+
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+
+---
+
+## 🙌 Check the Prometheus Targets
+
+```bash
+oc get route prometheus
+```
+
+<div><img class="plain"  src="./presentation-sources/prometheus.png" style="max-height:400px;"/></div>
+
+
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+
+---
+
+## 🙌 Deploy Grafana
+
+```bash
+oc apply -f strimzi/metrics-demo/grafana.yaml 
+oc get routes grafana
+```
+
+<div><img class="plain"  src="./presentation-sources/grafana-login.png" style="max-height:400px;"/></div>
+
+user: admin, password: admin
+
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+
+---
+
+## 🙌 Configure the Prometheus Datasource
+
+<div><img class="plain"  src="./presentation-sources/grafana-configure-prometheus.png" style="max-height:400px;"/></div>
+
+Name: Prometheus, Url: http://prometheus:9090
+
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+
+---
+
+## 🙌 Import the Strimzi Dashboard
+
+Copy `strimzi/metrics-demo/kafka-dashboard.json`
+
+<div><img class="plain"  src="./presentation-sources/grafana-dashboard.png" style="max-height:400px;"/></div>
+
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+
+---
 
 ### Kafka Eco System
 

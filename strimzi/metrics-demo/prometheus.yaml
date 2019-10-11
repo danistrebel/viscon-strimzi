@@ -1,0 +1,56 @@
+apiVersion: monitoring.coreos.com/v1
+kind: Prometheus
+metadata:
+  name: prometheus
+  labels:
+    app: strimzi
+spec:
+  replicas: 1
+  serviceAccountName: prometheus-server
+  serviceMonitorSelector:
+    matchLabels:
+      app: strimzi
+  resources:
+    requests:
+      memory: 400Mi
+  enableAdminAPI: false
+  ruleSelector:
+    matchLabels:
+      role: alert-rules
+      app: strimzi
+  additionalScrapeConfigs:
+    name: additional-scrape-configs
+    key: prometheus-additional.yaml
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: prometheus
+  labels:
+    app: strimzi
+spec:
+  ports:
+    - name: prometheus
+      port: 9090
+      targetPort: 9090
+      protocol: TCP
+  selector:
+    prometheus: prometheus
+  type: ClusterIP
+---
+apiVersion: v1
+kind: Route
+metadata:
+  labels:
+    app: strimzi
+    name: prometheus
+  name: prometheus
+spec:
+  port:
+    targetPort: prometheus
+  to:
+    kind: Service
+    name: prometheus
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
