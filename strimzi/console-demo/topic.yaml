@@ -1,7 +1,7 @@
 apiVersion: kafka.strimzi.io/v1beta1
 kind: KafkaTopic
 metadata:
-  name: viscon-auth
+  name: viscon-topic
   labels:
     strimzi.io/cluster: viscon-cluster
 spec:

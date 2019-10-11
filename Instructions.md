@@ -180,14 +180,22 @@ JGA TODO: Insert some diagrams from RHA
 
 ## What is Strimzi
 <div>
-<img class="plain"  src="./presentation-sources/strimzi.png" />
+<img class="plain"  src="./presentation-sources/strimzi.png" style="max-height:80px;" />
 </div>
 
-* Started by Redhat
-* Now CNCF Project
+* [Open Source](https://github.com/strimzi) Project (started by Red Hat)
+* Recencly adpoted as a [CNCF](https://www.cncf.io/) Project
 * Using Operators to deploy and manage Apache Kafka on Kubernetes / Openshift
-* Used by ipt in production since 2018
+* Used by ipt in production since GA in 2018
 
+
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+
+---
+
+## Strimzi Components
+
+<img class="plain"  src="./presentation-sources/kafka-components.png" />
 
 <div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
 
@@ -221,7 +229,8 @@ What has been done for you
 ###### Created Roles and ClusterRoles
 
 ```bash
-oc get clusterroles
+oc get ClusterRoles | grep strimzi
+
 NAME
 strimzi-cluster-operator-global
 strimzi-cluster-operator-namespaced
@@ -236,15 +245,6 @@ And assigned them to the `strimzi-cluster-operator` service account as well as y
 
 ---
 
-## Strimzi Components
-
-<img class="plain"  src="./presentation-sources/kafka-components.png" />
-
-<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
-
-
-
----
 
 ## 🙌 Strimzi Custom Resource
 
@@ -310,10 +310,11 @@ oc logs -f $(oc get pod -l name=strimzi-cluster-operator -o name)
 
 Create a custom Kafka resource
 ```bash
-oc apply -f strimzi/kafka0.yaml
+oc apply -f strimzi/kafka/kafka-plain.yaml
 ```
 
-Watch the operator create a full Kafka cluster
+Watch the operator create a full Kafka cluster  
+(in about 30s 🎉)
 
 ```bash
 oc get pods
@@ -325,6 +326,17 @@ viscon-cluster-kafka-0                            2/2       Running
 viscon-cluster-kafka-1                            2/2       Running
 viscon-cluster-zookeeper-0                        2/2       Running
 ```
+
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+
+---
+
+## First End To End Example
+
+Start simple producers and consumers to  
+write to and read from a Kafka topic.
+
+<div><img class="plain"  src="./presentation-sources/console-demo.png" style="max-height:600px;"/></div>
 
 <div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
 
@@ -411,27 +423,27 @@ viscon-console-demo                                           1            1
 
 ## 🙌 Kafka Topic - Spec First
 
-Take a look at the KafkaTopic in `strimzi/topic0.yaml`
+Take a look at the KafkaTopic in  
+`strimzi/console-demo/topic.yaml`
 
-```
+```yaml
 apiVersion: kafka.strimzi.io/v1beta1
 kind: KafkaTopic
 metadata:
-  name: viscon-auth
+  name: viscon-topic
   labels:
     strimzi.io/cluster: viscon-cluster
 spec:
   partitions: 6
   replicas: 2
   config:
-    retention.ms: 7200000
-    segment.bytes: 1073741824
+    retention.ms: 86400000 #24h
 ```
 
 Now, create the topic by applying the CR
 
 ```bash
-oc apply -f strimzi/topic0.yaml
+oc apply -f strimzi/console-demo/topic.yaml
 ```
 
 <div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
@@ -455,7 +467,7 @@ oc run kafka-topic-list -ti --image=strimzi/kafka:0.14.0-kafka-2.3.0 \
  --bootstrap-server viscon-cluster-kafka-bootstrap:9092
 
 __consumer_offsets
-viscon-auth
+viscon-topic
 viscon-console-demo
 pod "kafka-topic-list" deleted
 ```
@@ -464,12 +476,30 @@ pod "kafka-topic-list" deleted
 
 ---
 
+## The was cute?!
+
+So what is missing?
+
+# 🤷
+
+* Authentication
+* Processing
+* Metrics
+
+
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+
+---
+
 ## 🙌 Kafka Authentication
 
-Because we no longer want the whole world to be able to read and write to and from our Kafka Topics we change our Kafka Resource
+We no longer want our topics to be open to the world.
+
+We can enforce [mutual tls](https://en.wikipedia.org/wiki/Mutual_authentication)  
+by adapting our Kafka resource:
 
 ```bash
-diff strimzi/kafka0.yaml strimzi/kafka1.yaml
+diff strimzi/kafka/kafka-plain.yaml strimzi/kafka/kafka-mtls.yaml
 10,11c10,12
 <       plain: {}
 <       tls: {}
@@ -486,28 +516,40 @@ diff strimzi/kafka0.yaml strimzi/kafka1.yaml
 
 ## 🙌 Kafka Authentication Cont.
 
-To change the listener config we apply the `./strimzi/kafka0.yaml`  config.
+To change the broker listener config we apply the  
+`strimzi/kafka/kafka-mtls.yaml`  
+config.
 
 ```bash
-oc apply -f strimzi/kafka1.yaml
+oc apply -f strimzi/kafka/kafka-mtls.yaml
 ```
+
+and wait for the Kafka brokers to update
 
 <div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
 
 ---
 
-## 🙌 Kafka Consumer User
+## More Sophisticated Scenario
 
-Create Users with Read/Write Permissions
 
-`./strimzi/user-consumer0.yaml`
+<div><img class="plain"  src="./presentation-sources/stream-demo.png" style="max-height:600px;"/></div>
+
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+
+---
+
+## 🙌 Create Demo Producer User
+
+`strimzi/iot-demo/iot-device/users.yaml`
 
 ```yaml
 apiVersion: kafka.strimzi.io/v1beta1
 kind: KafkaUser
 metadata:
-  name: consumer-0
+  name: iot-device
   labels:
+    app: iot-demo
     strimzi.io/cluster: viscon-cluster
 spec:
   authentication:
@@ -517,87 +559,156 @@ spec:
     acls:
       - resource:
           type: topic
-          name: viscon-auth
-          patternType: literal
-        operation: Read
-        host: "*"
-      - resource:
-          type: topic
-          name: viscon-auth
-          patternType: literal
-        operation: Describe
-        host: "*"
-      - resource:
-          type: group
-          name: consumer-group
-          patternType: literal
-        operation: Read
-        host: "*"
-```
-<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
-
-
----
-
-## 🙌 Kafka Producer User
-
-
-`./strimzi/user-producer0.yaml`
-
-```yaml
-apiVersion: kafka.strimzi.io/v1beta1
-kind: KafkaUser
-metadata:
-  name: producer-0
-  labels:
-    strimzi.io/cluster: viscon-cluster
-spec:
-  authentication:
-    type: tls
-  authorization:
-    type: simple
-    acls:
-      - resource:
-          type: topic
-          name: viscon-auth
+          name: iot-temperature
           patternType: literal
         operation: Write
         host: "*"
       - resource:
           type: topic
-          name: viscon-auth
+          name: iot-temperature
+          patternType: literal
+        operation: Describe
+        host: "*"
+      - resource:
+          type: topic
+          name: iot-temperature
+          patternType: literal
+        operation: Create
+        host: "*"
+```
+
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+
+---
+
+## 🙌 Create Demo Stream User
+
+`strimzi/iot-demo/iot-stream/users.yaml`
+
+```yaml
+apiVersion: kafka.strimzi.io/v1beta1
+kind: KafkaUser
+metadata:
+  name: iot-stream
+  labels:
+    app: iot-demo
+    strimzi.io/cluster: viscon-cluster
+spec:
+  authentication:
+    type: tls
+  authorization:
+    type: simple
+    acls:
+      - resource:
+          type: topic
+          name: iot-temperature
+          patternType: literal
+        operation: Read
+        host: "*"
+      - resource:
+          type: topic
+          name: iot-temperature-max
+          patternType: literal
+        operation: Write
+        host: "*"
+      - resource:
+          type: topic
+          name: iot-temperature
+          patternType: literal
+        operation: Describe
+        host: "*"
+      - resource:
+          type: topic
+          name: iot-temperature-max
+          patternType: literal
+        operation: Describe
+        host: "*"
+      - resource:
+          type: topic
+          name: iot-temperature-max
           patternType: literal
         operation: Create
         host: "*"
       - resource:
-          type: topic
-          name: viscon-auth
-          patternType: literal
-        operation: Describe
+          type: group
+          name: iot-streams-app
+          patternType: prefix
+        operation: Read
         host: "*"
+
 ```
+
 <div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
 
 
 ---
 
-## 🙌 Kafka Producer User
+## 🙌 Create Demo Consumer User
 
+`strimzi/iot-demo/iot-consumer/users.yaml`
 
-Create both users
-```bash
-oc apply -f strimzi/user-consumer0.yaml
+```yaml
+apiVersion: kafka.strimzi.io/v1beta1
+kind: KafkaUser
+metadata:
+  name: iot-consumer
+  labels:
+    app: iot-demo
+    strimzi.io/cluster: viscon-cluster
+spec:
+  authentication:
+    type: tls
+  authorization:
+    type: simple
+    acls:
+      - resource:
+          type: topic
+          name: iot-temperature-max
+          patternType: literal
+        operation: Read
+        host: "*"
+      - resource:
+          type: topic
+          name: iot-temperature-max
+          patternType: literal
+        operation: Describe
+        host: "*"
+      - resource:
+          type: group
+          name: iot-consumers
+          patternType: prefix
+        operation: Read
+        host: "*"
 
-oc apply -f strimzi/user-producer0.yaml
 ```
 
-Verify that the Entity Operator  
-correctly configured the ACL
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+
+---
+
+## 🙌 Create all Users
+
 
 ```bash
-oc exec viscon-cluster-zookeeper-0 -- /opt/kafka/bin/kafka-acls.sh \
+oc apply -f strimzi/iot-demo/iot-device/users.yaml
+oc apply -f strimzi/iot-demo/iot-stream/users.yaml
+oc apply -f strimzi/iot-demo/iot-consumer/users.yaml
+```
+
+Verify the ACL for `iot-temperature`
+
+```bash
+oc exec viscon-cluster-zookeeper-0 -c zookeeper -- /opt/kafka/bin/kafka-acls.sh \
 --authorizer-properties zookeeper.connect=localhost:21810  \
---list --topic viscon-auth
+--list --topic iot-temperature
+```
+
+and for `iot-temperature-max`
+
+```bash
+oc exec viscon-cluster-zookeeper-0 -c zookeeper -- /opt/kafka/bin/kafka-acls.sh \
+--authorizer-properties zookeeper.connect=localhost:21810  \
+--list --topic iot-temperature-max
 ```
 
 <div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
@@ -617,21 +728,139 @@ oc get secrets -l strimzi.io/kind=KafkaUser -o yaml
 
 ---
 
-## Need to demonstrate the Auth Demo
+## 🙌 Mounting User Secrets
 
-https://github.com/strimzi/client-examples/blob/master/deployment-ssl-auth.yaml
+E.g. `strimzi/iot-demo/iot-device/deployment.yaml`  
+  
+```yaml
+containers:
+  - name: device-app
+    image: danistrebel/strimzi-device-app:latest
+    env:
+      - name: USER_CRT
+        valueFrom:
+          secretKeyRef:
+            name: iot-device
+            key: user.crt
+      - name: USER_KEY
+        valueFrom:
+          secretKeyRef:
+            name: iot-device
+            key: user.key
+```
+
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
 
 ---
+
+## 🙌 Deploy the IoT Device
+
+```bash
+oc apply -f strimzi/iot-demo/iot-device/deployment.yaml
+```
+
+and check the logs
+
+```bash
+oc logs -f $(oc get pod -l name=device-app -o name | head -n 1)
+```
+
+Full Code  
+
+[https://github.com/danistrebel/strimzi-lab](https://github.com/danistrebel/strimzi-lab/tree/master/iot-demo/device-app)
+
+
+
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+
+
+---
+
+## 🙌 Deploy the IoT Stream Processor
+
+```bash
+oc apply -f strimzi/iot-demo/iot-stream/deployment.yaml
+```
+
+and check the logs
+
+```bash
+oc logs -f $(oc get pod -l name=stream-app -o name | head -n 1)
+```
+
+Full Code  
+
+[https://github.com/danistrebel/strimzi-lab](https://github.com/danistrebel/strimzi-lab/tree/master/iot-demo/stream-app)
+
+
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+
+---
+
+## 🙌 Deploy the Consumer
+
+```bash
+oc apply -f strimzi/iot-demo/iot-consumer/deployment.yaml
+```
+
+and check the logs
+
+```bash
+oc logs -f $(oc get pod -l name=consumer-app -o name | head -n 1)
+```
+
+Full Code  
+
+[https://github.com/danistrebel/strimzi-lab](https://github.com/danistrebel/strimzi-lab/tree/master/iot-demo/consumer-app)
+
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+
+---
+
+## 🙌 Check the Dashboard
+
+```bash
+oc get route consumer-app -o jsonpath='{.spec.host}'
+```
+
+and open it in a new Tab
+
+<div><img class="plain"  src="./presentation-sources/iot-dashboard.png" style="max-height:300px;"/></div>
+
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+
+---
+
+## 🙌 Scale the Deployment
+
+Increase the number of sensor devices to 3
+
+```bash
+oc scale deployment device-app --replicas 3
+```
+
+and wait for the data to show up in the dashboard
+
+<div><img class="plain"  src="./presentation-sources/iot-dashboard-scaled.png" style="max-height:300px;"/></div>
+
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+
+---
+
 
 ### Kafka Eco System
 
 * Kafka Connect
 * Mirror Maker
-* HTTP Bridge    
+* HTTP Bridge
 * Managed Kafka
   * AWS MSK
   * Azure Eventhubs
   * Confluent on GCP... 
+
+
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+
 
 ---
 

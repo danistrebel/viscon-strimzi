@@ -1,0 +1,50 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: stream-app
+  labels:
+    app: iot-demo
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: iot-demo
+        name: stream-app
+    spec:
+      containers:
+        - name: stream-app
+          image: danistrebel/strimzi-stream-app:latest
+
+          env:
+            - name: CA_CRT
+              valueFrom:
+                secretKeyRef:
+                  name: viscon-cluster-cluster-ca-cert
+                  key: ca.crt
+            - name: USER_CRT
+              valueFrom:
+                secretKeyRef:
+                  name: iot-stream
+                  key: user.crt
+            - name: USER_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: iot-stream
+                  key: user.key
+            - name: BOOTSTRAP_SERVERS
+              value: "viscon-cluster-kafka-bootstrap:9093"
+            - name: APPLICATION_ID
+              value: "iot-streams-app"
+            - name: TOPIC_TEMPERATURE
+              value: "iot-temperature"
+            - name: TOPIC_TEMPERATURE_MAX
+              value: "iot-temperature-max"
+            - name: TEMPERATURE_THRESHOLD
+              value: "20"
+            - name: TEMPERATURE_WINDOW_SIZE
+              value: "5"
+          resources:
+            limits:
+              cpu: 300m
+              memory: 256Mi

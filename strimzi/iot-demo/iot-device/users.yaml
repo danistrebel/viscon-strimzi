@@ -1,0 +1,31 @@
+apiVersion: kafka.strimzi.io/v1beta1
+kind: KafkaUser
+metadata:
+  name: iot-device
+  labels:
+    app: iot-demo
+    strimzi.io/cluster: viscon-cluster
+spec:
+  authentication:
+    type: tls
+  authorization:
+    type: simple
+    acls:
+      - resource:
+          type: topic
+          name: iot-temperature
+          patternType: literal
+        operation: Write
+        host: "*"
+      - resource:
+          type: topic
+          name: iot-temperature
+          patternType: literal
+        operation: Describe
+        host: "*"
+      - resource:
+          type: topic
+          name: iot-temperature
+          patternType: literal
+        operation: Create
+        host: "*"
