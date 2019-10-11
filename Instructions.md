@@ -109,7 +109,7 @@ nl.ch-inter.net
 
 ---
 
-## k8s Slang
+## k8s Lingo
 
 * Pod
 * Container
@@ -170,7 +170,9 @@ oc get all
 
 ## What is Apache Kafka
 
-<img class="plain"  src="./presentation-sources/apache-kafka.png" />
+<!-- <img class="plain"  src="./presentation-sources/apache-kafka.png" /> -->
+
+JGA TODO: Insert some diagrams from RHA
 
 <div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
 
