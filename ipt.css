@@ -38,11 +38,6 @@
   height: 60px;
 }
 
-.reveal.center .slides section {
-  height: 100% !important;
-  top: 0px !important;
-}
-
 .reveal code {
   background: #282a36;
   color: white;

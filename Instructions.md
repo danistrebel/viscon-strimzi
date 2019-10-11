@@ -21,7 +21,7 @@ enableTitleFooter: false
 
 ## Welcome
 
-<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" height="60px"/></div>
 
 <div><img class="plain"  src="./presentation-sources/ipt-team.jpg" style="max-height:400px;"/></div>
 
@@ -65,13 +65,13 @@ de.ch-inter.net
 nl.ch-inter.net
 ```
 
-<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" height="60px"/></div>
 
 ---
 
 ## ipt AG @ ERFA
 
-<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" height="60px"/></div>
 
 <div><img class="plain"  src="./presentation-sources/ipt-erfa.jpg" style="max-height:400px;"/></div>
 
@@ -87,7 +87,7 @@ nl.ch-inter.net
 * 🚀 Cloud Architecture, Data, ML
 * 💙 Running, Hiking, Travel
 
-<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" height="60px"/></div>
 
 ---
 
@@ -100,7 +100,7 @@ nl.ch-inter.net
 * 🚀 Computer Vision, ML, DevOps
 * 💙 Music, Cooking, Gym
 
-<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" height="60px"/></div>
 
 ---
 
@@ -108,13 +108,15 @@ nl.ch-inter.net
 
 <div><img class="plain" style="max-height:600px;" src="http://turnoff.us/image/en/before-devops-after-devops.png"/></div>
 
-<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" height="60px"/></div>
 
 ---
 
 ## From Bare Metal to Container Orchestration
 
 <img class="plain"  src="./presentation-sources/container-orchestration.png" height="400px" />
+
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" height="60px"/></div>
 
 ---
 
@@ -127,7 +129,7 @@ nl.ch-inter.net
 * Route
 * Serviceaccount
 
-<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" height="60px"/></div>
 
 ---
 
@@ -137,12 +139,15 @@ The high level picture
 
 <img class="plain"  src="./presentation-sources/kita.png" height="400px" />
 
-<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" height="60px"/></div>
 
 ---
 
 ## Rule 1/1: Stick to the Instructions
 <img class="plain"  src="https://memeshappen.com/media/created/this-is-why-we-can39t-have-Nice-things-meme-22203.jpg" height="400px" />
+
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" height="60px"/></div>
+
 
 ---
 
@@ -152,7 +157,7 @@ Visit the URL on your snippet and enter the password to access the workspace
 
 <img class="plain"  src="./presentation-sources/workspace-login.png" height="400px" />
 
-<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" height="60px"/></div>
 
 ---
 
@@ -160,7 +165,7 @@ Visit the URL on your snippet and enter the password to access the workspace
 
 <img class="plain"  src="./presentation-sources/new-terminal.png" height="400px" />
 
-<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" height="60px"/></div>
 
 ---
 
@@ -180,7 +185,7 @@ oc whoami
 oc get all
 ```
 
-<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" height="60px"/></div>
 
 ---
 
@@ -190,7 +195,7 @@ oc get all
 
 <div class="tiny">© ipt AG</div>
 
-<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" height="60px"/></div>
 
 ---
 
@@ -200,7 +205,7 @@ oc get all
 
 <div class="tiny">© ipt AG</div>
 
-<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" height="60px"/></div>
 
 ---
 
@@ -210,7 +215,7 @@ oc get all
 
 <div class="tiny">© ipt AG</div>
 
-<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" height="60px"/></div>
 
 ---
 
@@ -225,7 +230,7 @@ oc get all
 * Used by ipt in production since GA in 2018
 
 
-<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" height="60px"/></div>
 
 ---
 
@@ -233,7 +238,7 @@ oc get all
 
 <img class="plain"  src="./presentation-sources/kafka-components.png" />
 
-<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" height="60px"/></div>
 
 ---
 
@@ -253,7 +258,7 @@ kafkatopics.kafka.strimzi.io
 kafkausers.kafka.strimzi.io
 ```
 
-<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" height="60px"/></div>
 
 ---
 
@@ -278,7 +283,7 @@ strimzi-topic-operator
 
 And assigned them to the `strimzi-cluster-operator` service account as well as your "user"
 
-<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" height="60px"/></div>
 
 ---
 
@@ -290,7 +295,7 @@ Change into the tutorial project
 cd /home/coder/projects/viscon-strimzi
 ```
 
-<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" height="60px"/></div>
 
 ---
 
@@ -324,7 +329,7 @@ spec:
 
 see `./strimzi/kafka/kafka-plain.yaml`
 
-<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" height="60px"/></div>
 
 
 ---
@@ -350,7 +355,7 @@ we can also inspect its logs by running
 oc logs -f $(oc get pod -l name=strimzi-cluster-operator -o name)
 ```
 
-<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" height="60px"/></div>
 
 ---
 
@@ -375,7 +380,7 @@ viscon-cluster-kafka-1                            2/2       Running
 viscon-cluster-zookeeper-0                        2/2       Running
 ```
 
-<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" height="60px"/></div>
 
 ---
 
@@ -386,7 +391,7 @@ write to and read from a Kafka topic.
 
 <div><img class="plain"  src="./presentation-sources/console-demo.png" style="max-height:600px;"/></div>
 
-<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" height="60px"/></div>
 
 ---
 
@@ -412,7 +417,7 @@ If you don`t see a command prompt, try pressing enter.
 
 Kill the session with CTRL + C when done
 
-<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" height="60px"/></div>
 
 ---
 
@@ -437,7 +442,7 @@ Hello Viscon
 
 Kill the session with CTRL + C when done
 
-<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" height="60px"/></div>
 
 ---
 
@@ -465,7 +470,7 @@ consumer-offsets---84e7a678d08f4bd226872e5cdd4eb527fadc1c6a   50           2
 viscon-console-demo                                           1            1
 ```
 
-<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" height="60px"/></div>
 
 ---
 
@@ -494,7 +499,7 @@ Now, create the topic by applying the CR
 oc apply -f strimzi/console-demo/topic.yaml
 ```
 
-<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" height="60px"/></div>
 
 
 ---
@@ -520,7 +525,7 @@ viscon-console-demo
 pod "kafka-topic-list" deleted
 ```
 
-<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" height="60px"/></div>
 
 ---
 
@@ -535,7 +540,7 @@ So what is missing?
 * Metrics
 
 
-<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" height="60px"/></div>
 
 ---
 
@@ -557,7 +562,7 @@ diff strimzi/kafka/kafka-plain.yaml strimzi/kafka/kafka-mtls.yaml
 >           type: tls
 ```
 
-<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" height="60px"/></div>
 
 
 ---
@@ -574,7 +579,7 @@ oc apply -f strimzi/kafka/kafka-mtls.yaml
 
 and wait for the Kafka brokers to update
 
-<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" height="60px"/></div>
 
 ---
 
@@ -583,7 +588,7 @@ and wait for the Kafka brokers to update
 
 <div><img class="plain"  src="./presentation-sources/stream-demo.png" style="max-height:600px;"/></div>
 
-<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" height="60px"/></div>
 
 ---
 
@@ -625,7 +630,7 @@ spec:
         host: "*"
 ```
 
-<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" height="60px"/></div>
 
 ---
 
@@ -686,7 +691,7 @@ spec:
 
 ```
 
-<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" height="60px"/></div>
 
 
 ---
@@ -730,7 +735,7 @@ spec:
 
 ```
 
-<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" height="60px"/></div>
 
 ---
 
@@ -759,7 +764,7 @@ oc exec viscon-cluster-zookeeper-0 -c zookeeper -- /opt/kafka/bin/kafka-acls.sh 
 --list --topic iot-temperature-max
 ```
 
-<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" height="60px"/></div>
 
 ---
 
@@ -772,7 +777,7 @@ The entity operator created user certificates for all users which include a CA c
 oc get secrets -l strimzi.io/kind=KafkaUser -o yaml
 ```
 
-<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" height="60px"/></div>
 
 ---
 
@@ -797,7 +802,7 @@ containers:
             key: user.key
 ```
 
-<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" height="60px"/></div>
 
 ---
 
@@ -819,7 +824,7 @@ Full Code
 
 
 
-<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" height="60px"/></div>
 
 
 ---
@@ -841,7 +846,7 @@ Full Code
 [https://github.com/danistrebel/strimzi-lab](https://github.com/danistrebel/strimzi-lab/tree/master/iot-demo/stream-app)
 
 
-<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" height="60px"/></div>
 
 ---
 
@@ -861,7 +866,7 @@ Full Code
 
 [https://github.com/danistrebel/strimzi-lab](https://github.com/danistrebel/strimzi-lab/tree/master/iot-demo/consumer-app)
 
-<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" height="60px"/></div>
 
 ---
 
@@ -875,7 +880,7 @@ and open it in a new Tab
 
 <div><img class="plain"  src="./presentation-sources/iot-dashboard.png" style="max-height:300px;"/></div>
 
-<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" height="60px"/></div>
 
 ---
 
@@ -891,7 +896,7 @@ and wait for the data to show up in the dashboard
 
 <div><img class="plain"  src="./presentation-sources/iot-dashboard-scaled.png" style="max-height:300px;"/></div>
 
-<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" height="60px"/></div>
 
 ---
 
@@ -911,7 +916,7 @@ oc apply -f strimzi/metrics-demo/prometheus.yaml
 oc apply -f strimzi/metrics-demo/prometheus-service-monitor.yaml
 ```
 
-<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" height="60px"/></div>
 
 ---
 
@@ -924,7 +929,7 @@ oc get route prometheus
 <div><img class="plain"  src="./presentation-sources/prometheus.png" style="max-height:400px;"/></div>
 
 
-<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" height="60px"/></div>
 
 ---
 
@@ -939,7 +944,7 @@ oc get routes grafana
 
 user: admin, password: admin
 
-<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" height="60px"/></div>
 
 ---
 
@@ -949,7 +954,7 @@ user: admin, password: admin
 
 Name: Prometheus, Url: http://prometheus:9090
 
-<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" height="60px"/></div>
 
 ---
 
@@ -959,7 +964,7 @@ Copy `strimzi/metrics-demo/kafka-dashboard.json`
 
 <div><img class="plain"  src="./presentation-sources/grafana-dashboard.png" style="max-height:400px;"/></div>
 
-<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" height="60px"/></div>
 
 ---
 
@@ -974,7 +979,7 @@ Copy `strimzi/metrics-demo/kafka-dashboard.json`
   * Confluent on GCP... 
 
 
-<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" height="60px"/></div>
 
 ---
 
@@ -982,7 +987,7 @@ Copy `strimzi/metrics-demo/kafka-dashboard.json`
 
 <img class="plain" src="https://media.giphy.com/media/DPiuat0EsqP3a/giphy.gif" style="max-heigh:600px">
 
-<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" height="60px"/></div>
 
 ---
 
@@ -999,4 +1004,4 @@ Copy `strimzi/metrics-demo/kafka-dashboard.json`
 * **IPT Careers Portal**  
   ipt.ch/karriere
 
-<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" style="max-height:100px;"/></div>
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" height="60px"/></div>
