@@ -815,6 +815,24 @@ containers:
 
 ---
 
+## 🙌 Create the Kakfa Topics
+
+```bash
+oc apply -f strimzi/iot-demo/topicsyaml
+```
+
+and check the settings
+
+```bash
+oc describe kt
+```
+
+
+<div><img class="plain ipt-footer"  src="./presentation-sources/logo-ipt.svg" height="60px"/></div>
+
+
+---
+
 ## 🙌 Deploy the IoT Device
 
 ```bash

@@ -117,3 +117,19 @@ subjects:
   - kind: ServiceAccount
     name: prometheus-server
     namespace: K8S_NAMESPACE
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: prometheus-operator-K8S_NAMESPACE
+  namespace: K8S_NAMESPACE
+  labels:
+    app: strimzi
+subjects:
+  - kind: ServiceAccount
+    name: space-admin
+    namespace: K8S_NAMESPACE
+roleRef:
+  kind: ClusterRole
+  name: prometheus-operator
+  apiGroup: rbac.authorization.k8s.io
