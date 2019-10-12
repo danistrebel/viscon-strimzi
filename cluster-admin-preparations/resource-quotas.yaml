@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: viscon-quotas
+spec:
+  hard:
+    pods: "20"
+    limits.cpu: "6"
+    limits.memory: 10Gi
